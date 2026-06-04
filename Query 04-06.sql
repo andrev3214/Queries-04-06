@@ -41,3 +41,14 @@ create table Medicos
 	Telefono varchar(20),
 	IdEspecialidades int not null,
 )
+
+
+create table Citas
+(
+	IdCita int primary key identity(1,1),
+	FechaCita date not null,
+	HoraCita time not null,
+	Motivo varchar(255),
+	IdPaciente int not null,
+	IdMedico int not null,
+)
