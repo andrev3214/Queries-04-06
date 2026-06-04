@@ -24,8 +24,6 @@ create table Pacientes
 	Direccion varchar(200),
 	Telefono varchar(20)
 )
-go
-
 
 create table Especialidades
 (
@@ -43,9 +41,24 @@ create table Medicos
 
 	constraint FK_Medicos_Especialidades
 	foreign key (IdEspecialidades)
-	references Especialidades(IdEspecialidades)
+	references Especialidades(IdEspecialidad)
 )
 
+create table Habitaciones
+(
+	IdHabitacion int primary key identity(1,1),
+	NumeroHabitacion varchar(10) not null,
+	TipoHabitacion varchar(50),
+	Estado varchar(50)
+)
+
+create table Medicamentos
+(
+	IdMedicamento int primary key identity(1,1),
+	NombreMedicamento varchar(100) not null,
+	Descripcion varchar(255),
+	stock int not null
+)
 
 create table Citas
 (
@@ -65,22 +78,6 @@ create table Citas
 	references Medicos(IdMedico)
 )
 
-create table Habitaciones
-(
-	IdHabitacion int primary key identity(1,1),
-	NumeroHabitacion varchar(10) not null,
-	TipoHabitacion varchar(50),
-	Estado varchar(50)
-)
-
-create table Medicamentos
-(
-	IdMedicamento int primary key identity(1,1)
-	NombreMedicamenti varchar(100) not null,
-	Descripcion varchar(255),
-	stock int not null
-)
-
 create table Tratamientos
 (
 	IdTratamiento int primary key identity(1,1),
@@ -95,5 +92,7 @@ create table Tratamientos
 
 	constraint FK_Tratamientos_Medicamentos
 	foreign key (IdPaciente)
-	references Medicamentos(IdMedicamentos)
+	references Medicamentos(IdMedicamento)
 )
+
+
