@@ -14,3 +14,14 @@ go
 use HospitalDB
 go
 
+create table Pacientes
+(
+	IdPaciente int primary key identity(1,1),
+	Nombre varchar(100) not null,
+	Apellido varchar(100) not null,
+	FechaNacimiento date not null,
+	Genero char(1),
+	Direccion varchar(200),
+	Telefono varchar(20)
+)
+go
