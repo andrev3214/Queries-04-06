@@ -503,3 +503,27 @@ select * from Pacientes;
 
 --Mostrar todos los medicos
 select * from Medicos;
+
+--Mostrar todas las especialidades
+select * from Especialidades;
+
+--Mostrar todas las citas
+select * from Citas;
+
+--Mostrar pacientes ordenados por apellido
+select * from Pacientes order by Apellido;
+
+--Mostrar medicos ordenados por salario
+select * from Medicos order by Salario desc;
+
+--Mostrar citas del dia actual
+select * from Citas where FechaCita = cast(getdate() as date);
+
+--Mostrar habitaciones disponibles
+select * from Habitaciones where Estado = 'Disponible';
+
+--Mostrar cantidad de pacientes registrados
+select count(*) as CantidadPacientes from Pacientes;
+
+--Mostrar cantidad de citas por medico
+select IdMedico, count(*) as CantidadCitas from Citas group by IdMedico;
