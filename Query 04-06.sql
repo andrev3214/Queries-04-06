@@ -500,3 +500,6 @@ delete from Pacientes where Nombre like 'Test%';
 
 --Mostrar todos los pacientes
 select * from Pacientes;
+
+--Mostrar todos los medicos
+select * from Medicos;
