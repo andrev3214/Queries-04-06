@@ -60,3 +60,11 @@ create table Habitaciones
 	TipoHabitacion varchar(50),
 	Estado varchar(50)
 )
+
+create table Medicamentos
+(
+	IdMedicamento int primary key identity(1,1)
+	NombreMedicamenti varchar(100) not null,
+	Descripcion varchar(255),
+	stock int not null
+)
