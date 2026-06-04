@@ -52,3 +52,11 @@ create table Citas
 	IdPaciente int not null,
 	IdMedico int not null,
 )
+
+create table Habitaciones
+(
+	IdHabitacion int primary key identity(1,1),
+	NumeroHabitacion varchar(10) not null,
+	TipoHabitacion varchar(50),
+	Estado varchar(50)
+)
