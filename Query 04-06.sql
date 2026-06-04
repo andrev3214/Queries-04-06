@@ -22,7 +22,8 @@ create table Pacientes
 	FechaNacimiento date not null,
 	Genero char(1),
 	Direccion varchar(200),
-	Telefono varchar(20)
+	Telefono varchar(20),
+	FechaRegistro date default getdate()
 )
 
 create table Especialidades
@@ -36,6 +37,7 @@ create table Medicos
 	IdMedico int primary key identity(1,1),
 	Nombre varchar(100) not null,
 	Apellido varchar(100) not null,
+	Correo varchar(150) unique,
 	Telefono varchar(20),
 	IdEspecialidades int not null,
 
