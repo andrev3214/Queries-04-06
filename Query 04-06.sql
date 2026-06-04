@@ -40,6 +40,10 @@ create table Medicos
 	Apellido varchar(100) not null,
 	Telefono varchar(20),
 	IdEspecialidades int not null,
+
+	constraint FK_Medicos_Especialidades
+	foreign key (IdEspecialidades)
+	references Especialidades(IdEspecialidades)
 )
 
 
