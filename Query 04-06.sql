@@ -110,4 +110,73 @@ create table Tratamientos
     references Pacientes(IdPaciente)
 )
 
+-- Agregar teléfono
+alter table Pacientes
+add Telefono varchar(20);
+
+-- Agregar dirección
+alter table Pacientes
+add Direccion varchar(200);
+
+-- Agregar género
+alter table Pacientes
+add Genero char(1);
+
+-- Agregar tipo de sangre
+alter table Pacientes
+add Tipo_Sangre varchar(5);
+
+-- Agregar fecha de nacimiento
+alter table Pacientes
+add Fecha_Nacimiento date;
+
+-- Modificar tamaño del campo nombre
+alter table Pacientes
+alter column Nombre varchar(150) NOT NULL;
+
+-- Modificar tamaño del campo dirección
+alter table Pacientes
+alter column Direccion varchar(300);
+
+/*
+Medicos
+-- Agregar experiencia
+*/
+alter table Medicos
+add Experiencia int;
+
+-- Agregar turno
+alter table Medicos
+add Turno varchar(50);
+
+-- Agregar observaciones
+alter table Medicos
+add Observaciones varchar(255);
+
+-- Eliminar observaciones
+alter table Medicos
+drop column Observaciones;
+
+/*
+Citas
+-- Agregar estado
+*/
+alter table Citas
+add Estado varchar(50);
+
+-- Agregar costo de consulta
+alter table Citas
+add Costo_Consulta float;
+
+-- Modificar tipo de dato del costo
+alter table Citas
+alter column Costo_Consulta decimal(10,2);
+
+/*
+Habitaciones
+*/
+
+-- Agregar disponibilidad
+alter table Habitaciones
+add Disponibilidad varchar(50);
 
