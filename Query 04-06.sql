@@ -466,4 +466,32 @@ update Pacientes set Tipo_Sangre = 'O+' where IdPaciente = 1;
 
 --Modulo VII - Delete
 
+--Eliminar un paciente en especifico
+delete from Pacientes where IdPaciente = 1;
 
+--Eliminar una cita
+delete from Citas where IdCita = 1;
+
+--Eliminar un medicamento
+delete from Medicamentos where IdMedicamento = 1;
+
+--Eliminar una habitacion
+delete from Habitaciones where IdHabitacion = 204;
+
+--Eliminar un tratamiento
+delete from Tratamientos where IdTratamiento = 1;
+
+--Eliminar citas canceladas
+delete from Citas where Estado = 'Cancelada';
+
+--Eliminar pacientes sin citas
+delete from Pacientes where IdPaciente not in (select IdPaciente from Citas);
+
+--Eliminar habitaciones vacias
+delete from Habitaciones where Estado = 'Disponible';
+
+--Eliminar medicamentos vencidos
+delete from Medicamentos where stock = 0;
+
+--Eliminar registros de pruebas
+delete from Pacientes where Nombre like 'Test%';
