@@ -32,3 +32,12 @@ create table Especialidades
 	IdEspecialidad int primary key identity(1,1),
 	NombreEspecialidad varchar(100) not null
 )
+
+create table Medicos
+(
+	IdMedico int primary key identity(1,1),
+	Nombre varchar(100) not null,
+	Apellido varchar(100) not null,
+	Telefono varchar(20),
+	IdEspecialidades int not null,
+)
