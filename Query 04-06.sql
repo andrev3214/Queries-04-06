@@ -52,6 +52,10 @@ create table Habitaciones
 	NumeroHabitacion varchar(10) not null,
 	TipoHabitacion varchar(50),
 	Estado varchar(50)
+	
+	constraint FK_Habitaciones_Pacientes
+    foreign key (IdPaciente)
+    references Pacientes(IdPaciente)
 )
 
 create table Medicamentos
@@ -59,7 +63,12 @@ create table Medicamentos
 	IdMedicamento int primary key identity(1,1),
 	NombreMedicamento varchar(100) not null,
 	Descripcion varchar(255),
-	stock int not null
+	stock int not null,
+	IdTratamiento int not null,
+
+	constraint FK_Medicamentos_Tratamientos
+	foreign key (IdTratamiento)
+	references Tratamientos(IdTratamiento)
 )
 
 create table Citas
@@ -94,7 +103,11 @@ create table Tratamientos
 
 	constraint FK_Tratamientos_Medicamentos
 	foreign key (IdPaciente)
-	references Medicamentos(IdMedicamento)
+	references Medicamentos(IdMedicamento),
+
+    constraint FK_Tratamientos_Pacientes
+    foreign key (IdPaciente)
+    references Pacientes(IdPaciente)
 )
 
 
