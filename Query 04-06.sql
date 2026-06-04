@@ -273,27 +273,27 @@ insert into Medicos (Nombre, Apellido, Correo, Telefono, IdEspecialidades) value
 ('Valentina', 'Torres', 'valentina.torres@example.com', '555-8901', 5);
 
 --Insertar 20 pacientes
-insert into Pacientes (Nombre, Apellido, FechaNacimiento, Genero, Direccion, Telefono) values 
-('Pedro', 'González', '1985-03-15', 'M', 'Calle 123, Ciudad', '555-1111'),
-('Lucía', 'Fernández', '1990-07-22', 'F', 'Avenida 456, Ciudad', '555-2222'),
-('Jorge', 'Martínez', '1978-11-30', 'M', 'Calle 789, Ciudad', '555-3333'),
-('Sofía', 'López', '2000-01-10', 'F', 'Avenida 321, Ciudad', '555-4444'),
-('Diego', 'García', '1995-05-05', 'M', 'Calle 654, Ciudad', '555-5555'),
-('Valentina', 'Hernández', '1988-09-18', 'F', 'Avenida 987, Ciudad', '555-6666'),
-('Miguel', 'Sánchez', '1975-12-25', 'M', 'Calle 321, Ciudad', '555-7777'),
-('Laura', 'Ramírez', '1992-04-12', 'F', 'Avenida 654, Ciudad', '555-8888'),
-('Carlos', 'Torres', '1980-08-20', 'M', 'Calle 987, Ciudad', '555-9999'),
-('Ana', 'Gómez', '1998-02-28', 'F', 'Avenida 123, Ciudad', '555-0000'),
-('Luis', 'Pérez', '1983-06-10', 'M', 'Calle 456, Ciudad', '555-1112'),
-('Sofía', 'Martínez', '1991-10-15', 'F', 'Avenida 789, Ciudad', '555-2223'),
-('Miguel Ángel García','1987-01-20','M','Calle 321, Ciudad','555-3334'),
-('Laura Sánchez','1993-03-25','F','Avenida 654, Ciudad','555-4445'),
-('Diego Ramírez','1979-07-30','M','Calle 987, Ciudad','555-5556'),
-('Valentina Torres','1985-11-05','F','Avenida 123, Ciudad','555-6667'),
-('Pedro González','1982-02-14','M','Calle 123, Ciudad','555-7778'),
-('Lucía Fernández','1990-08-22','F','Avenida 456, Ciudad','555-8889'),
-('Jorge Martínez','1978-12-30','M','Calle 789, Ciudad','555-9990'),
-('Sofía López','2000-02-10','F','Avenida 321, Ciudad','555-0001');
+insert into Pacientes (Nombre, Apellido, FechaNacimiento, Correo, Genero, Direccion, Telefono, Tipo_Sangre) values 
+('Pedro', 'González', '1985-03-15', 'pedro.gonzalez@example.com', 'M', 'Calle 123, Ciudad', '555-1111', 'O+'),
+('Lucía', 'Fernández', '1990-07-22', 'lucia.fernandez@example.com', 'F', 'Avenida 456, Ciudad', '555-2222', 'A-'),
+('Jorge', 'Martínez', '1978-11-30', 'jorge.martinez@example.com', 'M', 'Calle 789, Ciudad', '555-3333', 'B+'),
+('Sofía', 'López', '2000-01-10', 'sofia.lopez@example.com', 'F', 'Avenida 321, Ciudad', '555-4444', 'AB-'),
+('Diego', 'García', '1995-05-05', 'diego.garcia@example.com', 'M', 'Calle 654, Ciudad', '555-5555', 'O-'),
+('Valentina', 'Hernández', '1988-09-18', 'valentina.hernandez@example.com', 'F', 'Avenida 987, Ciudad', '555-6666', 'A+'),
+('Miguel', 'Sánchez', '1975-12-25', 'miguel.sanchez@example.com', 'M', 'Calle 321, Ciudad', '555-7777', 'B-'),
+('Laura', 'Ramírez', '1992-04-12', 'laura.ramirez@example.com', 'F', 'Calle 654, Ciudad', '555-8888', 'AB+'),
+('Carlos', 'Torres', '1980-08-20', 'carlos.torres@example.com', 'M', 'Avenida 123, Ciudad', '555-9999', 'O+'),
+('Ana','Gómez','1998-02-28','ana.gomez@example.com','F','Calle 987, Ciudad','555-0000','A-'),
+('Luis','Rodríguez','1983-06-10','luis.rodriguez@example.com','M','Calle 456, Ciudad','555-1111','B+'),
+('Sofía','Hernández','1991-09-25','sofia.hernandez@example.com','F','Avenida 321, Ciudad','555-2222','AB-'),
+('Miguel','García','1977-11-05','miguel.garcia@example.com','M','Calle 789, Ciudad','555-3333','O+'),
+('Laura','Sánchez','1993-03-18','laura.sanchez@example.com','F','Calle 654, Ciudad','555-4444','A+'),
+('Diego','Ramírez','1989-12-30','diego.ramirez@example.com','M','Avenida 123, Ciudad','555-5555','B-'),
+('Valentina','Torres','1995-07-14','valentina.torres@example.com','F','Calle 321, Ciudad','555-6666','O+'),
+('Pedro','González','1985-03-15','pedro.gonzalez@example.com','M','Calle 123, Ciudad','555-1111','O+'),
+('Lucía','Fernández','1990-07-22','lucia.fernandez@example.com','F','Avenida 456, Ciudad','555-2222','A-'),
+('Jorge','Martínez','1978-11-30','jorge.martinez@example.com','M','Calle 789, Ciudad','555-3333','B+'),
+('Sofía','López','2000-01-10','sofia.lopez@example.com','F','Avenida 321, Ciudad','555-4444','AB-');
 
 --Insertar 15 citas
 insert into Citas (FechaCita, HoraCita, Motivo, IdPaciente, IdMedico) values 
@@ -416,4 +416,54 @@ insert into Tratamientos (Descripcion, FechaInicio, IdPaciente, IdMedicamento) v
 ('Tratamiento para acné', '2024-01-01', 4, 4),
 ('Tratamiento para gastritis', '2024-02-01', 5, 5),
 ('Tratamiento para hipertensión', '2024-03-01', 6, 1);
+
+--Modulo VI - Update
+
+--actualizar telefono de un paciente
+update Pacientes set Telefono = '555-9999' where IdPaciente = 1;
+
+--Actualizar direccion de un paciente
+update Pacientes set Direccion = 'Calle Nueva 456, Ciudad' where IdPaciente = 2;
+
+--Actualizar salario de un medico
+update Medicos set Salario = 75000 where IdMedico = 1;
+
+--Actualizar turno de un medico
+update Medicos set Turno = 'Tarde' where IdMedico = 2;
+
+--Cambiar estado de una cita
+update Citas set Estado = 'Confirmada' where IdCita = 1;
+
+--Actualizar costo de una consulta
+update Citas set Costo_Consulta = 150.00 where IdCita = 2;
+
+--Actualizar nombre de una especialidad
+update Especialidades set NombreEspecialidad = 'Cardiología Avanzada' where IdEspecialidad = 1;
+
+--Actualizar disponibilidad de una habitación
+update Habitaciones set Disponibilidad = 'No Disponible' where IdHabitacion = 204;
+
+--Actualizar tratamiento activo
+update Tratamientos set FechaInicio = getdate() where IdTratamiento = 1;
+
+--Actualizar medicamento
+update Medicamentos set stock = 80 where IdMedicamento = 1;
+
+--Actualizar correo de paciente
+update Pacientes set Correo = 'lucia.fernandez@gmail.com' where IdPaciente = 2;
+
+--Actualizar correo de medico
+update Medicos set Correo = 'maria.gomez@hozpital.com' where IdMedico = 2;
+
+--Actulizar fecha de cita
+update Citas set FechaCita = '2024-08-15' where IdCita = 1;
+
+--Actualizar experiencia de medico
+update Medicos set Experiencia = 15 where IdMedico = 1;
+
+--Actualizar tipo de sangre
+update Pacientes set Tipo_Sangre = 'O+' where IdPaciente = 1;
+
+--Modulo VII - Delete
+
 
