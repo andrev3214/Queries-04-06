@@ -55,6 +55,14 @@ create table Citas
 	Motivo varchar(255),
 	IdPaciente int not null,
 	IdMedico int not null,
+
+	constraint FK_Citas_Pacientes
+	foreign key (IdPaciente)
+	references Pacientes(IdPaciente),
+
+	constraint FK_Citas_Medicas
+	foreign key (IdMedico)
+	references Medicos(IdMedico)
 )
 
 create table Habitaciones
