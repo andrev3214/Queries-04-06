@@ -68,3 +68,20 @@ create table Medicamentos
 	Descripcion varchar(255),
 	stock int not null
 )
+
+create table Tratamientos
+(
+	IdTratamiento int primary key identity(1,1),
+	Descripcion varchar(255) not null,
+	FechaInicio date,
+	IdPaciente int not null,
+	IdMedicamento int not null,
+
+	constraint FK_Tratamientos_Pacientes
+	foreign key (IdPaciente)
+	References Pacientes(IdPaciente),
+
+	constraint FK_Tratamientos_Medicamentos
+	foreign key (IdPaciente)
+	references Medicamentos(IdMedicamentos)
+)
