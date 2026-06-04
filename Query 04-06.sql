@@ -180,3 +180,78 @@ Habitaciones
 alter table Habitaciones
 add Disponibilidad varchar(50);
 
+--Eliminar  tabla temporal
+
+drop table TablaTemporal;
+go
+
+
+--Eliminar restricción CHECK
+
+alter table Pacientes
+drop constraint CK_Pacientes_Edad;
+go
+
+
+--Eliminar restriccion UNIQUE
+
+alter table Pacientes
+drop constraint UQ_Pacientes_Correo;
+go
+
+
+--Eliminar una columna
+alter table Medicos
+drop column Turno;
+go
+
+
+--Eliminar tabla de pruebas
+drop table TablaPruebas;
+go
+
+
+--Crear y eliminar tabla de auditoría
+create table Auditoria
+(
+    IdAuditoria int primary key identity(1,1),
+    Descripcion varchar(200),
+    Fecha datetime default getdate()
+);
+go
+
+drop table Auditoria;
+go
+
+--Crear y eliminar tabla de logs
+
+create table Logs
+(
+    IdLog int primary key identity(1,1),
+    Mensaje varchar(255),
+    Fecha datetime default getdate()
+);
+go
+
+drop table Logs;
+go
+
+
+--Eliminar foreign key
+
+alter table Citas
+drop constraint FK_Citas_Pacientes;
+go
+
+--Eliminar tabla MedicamentosPrueba
+
+drop table MedicamentosPrueba;
+go
+
+
+--Eliminar base de datos de pruebas
+use master;
+go
+
+drop database HospitalPruebasDB;
+go
