@@ -25,3 +25,10 @@ create table Pacientes
 	Telefono varchar(20)
 )
 go
+
+
+create table Especialidades
+(
+	IdEspecialidad int primary key identity(1,1),
+	NombreEspecialidad varchar(100) not null
+)
