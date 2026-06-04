@@ -495,3 +495,8 @@ delete from Medicamentos where stock = 0;
 
 --Eliminar registros de pruebas
 delete from Pacientes where Nombre like 'Test%';
+
+--Modulo VIII - Consultas select
+
+--Mostrar todos los pacientes
+select * from Pacientes;
